@@ -1,4 +1,4 @@
-#Cria a classe pai Pessoa jAHDSJKASDHGK
+#Cria a classe pai Pessoa 
 class Pessoa:
     def __init__(self, nome, idade, nif):
         self.nome = nome
