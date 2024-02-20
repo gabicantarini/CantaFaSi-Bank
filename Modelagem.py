@@ -1,3 +1,4 @@
+import BancoDados
 #Cria a classe pai Pessoa 
 class Pessoa:
     def __init__(self, nome, idade, nif):
@@ -10,6 +11,9 @@ class Pessoa:
         self.idade = input("Digite a sua idade: ")
         self.nif = input("Digite o seu nif: ")
         #return nome, idade, nif
+
+
+        
         
     def exibir_informacoes_Pessoa(self):
         print(f"Nome: {self.nome}, Idade: {self.idade}, NIF: {self.nif}")
@@ -25,11 +29,11 @@ class Pessoa:
 class AberturaConta(Pessoa):
     def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta):
         super().__init__(nome, idade, nif)
-        self.login = login
-        self.senha = senha
-        self.endereco = endereco
+        self.login = login #login é igual ao primeiro caracter do nome + nº de conta
+        self.senha = senha #Definida pelo utilizador
+        self.endereco = endereco 
         self.ordenado = ordenado
-        self.conta = conta
+        self.conta = conta # nº de conta é incrementado
 
     # Função para autenticação de usuários
     def autenticar(self):
@@ -50,7 +54,7 @@ class AberturaConta(Pessoa):
 
 # Módulo para gerenciar contas bancárias
 class ContaBancaria(AberturaConta):
-    def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta, saldo, historico):
+    def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta, saldo, historico):#Eliminar o histórico login pré definido
         super().__init__(nome, idade, nif, login, senha, endereco, ordenado, conta)
         self.saldo = 0
         self.historico = []
