@@ -44,19 +44,18 @@ class AberturaConta(Pessoa):
             print(f"{self.nome}, recebe o ordenado de {self.ordenado} e terá o limite de € 500. \n")
 
 class ContaBancaria(AberturaConta):
-    def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta, saldo, historico):
+    def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta, saldo):
         super().__init__(nome, idade, nif, login, senha, endereco, ordenado, conta)
         self.saldo = float(saldo)
-        self.historico = historico
 
     def depositar(self, valor):
         self.saldo += valor
-        self.historico.append(f'Depósito: +${valor}')
+        self.historico.append(f'Depósito: +€{valor}')
 
     def sacar(self, valor):
         if valor <= self.saldo:
             self.saldo -= valor
-            self.historico.append(f'Saque: -${valor}')
+            self.historico.append(f'Saque: -€{valor}')
         else:
             print("Saldo insuficiente.")
 
@@ -151,7 +150,7 @@ def main():
     for conta in dados:
         if conta['login'] == login_digitado and conta['senha'] == senha_digitada:
             cliente = ContaBancaria(conta['nome'], conta['idade'], conta['nif'], conta['login'], conta['senha'],
-                                    conta['endereco'], conta['ordenado'], conta['conta'], float(conta['saldo']), [])
+                                    conta['endereco'], conta['ordenado'], conta['conta'], float(conta['saldo']))
             break
 
     if cliente:
@@ -163,18 +162,18 @@ def main():
             print("3. Sacar")
             print("4. Adicionar Nova Conta")
             print("5. Atualizar Dados de Conta")
-            print("0. Sair")
+            print("9. Sair")
 
             escolha = input("Escolha uma opção: ")
 
             if escolha == "1":
-                print("Saldo atual: $", cliente.consultar_saldo())
+                print("Saldo atual: €", cliente.consultar_saldo())
             elif escolha == "2":
-                valor_deposito = float(input("Digite o valor a depositar: $"))
+                valor_deposito = float(input("Digite o valor a depositar: €"))
                 cliente.depositar(valor_deposito)
                 print("Depósito realizado com sucesso!")
             elif escolha == "3":
-                valor_saque = float(input("Digite o valor a sacar: $"))
+                valor_saque = float(input("Digite o valor a sacar: €"))
                 cliente.sacar(valor_saque)
             elif escolha == "4":
                 adicionar_nova_conta()
