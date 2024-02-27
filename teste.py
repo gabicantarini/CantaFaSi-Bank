@@ -161,9 +161,8 @@ def main():
             print("1. Consultar Saldo")
             print("2. Depositar")
             print("3. Sacar")
-            print("4. Exibir Histórico")
-            print("5. Adicionar Nova Conta")
-            print("6. Atualizar Dados de Conta")
+            print("4. Adicionar Nova Conta")
+            print("5. Atualizar Dados de Conta")
             print("0. Sair")
 
             escolha = input("Escolha uma opção: ")
