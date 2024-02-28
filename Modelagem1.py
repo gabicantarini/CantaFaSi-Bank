@@ -67,24 +67,23 @@ class ContaBancaria(Pessoa):
     
     def __init__(self, nome, idade, nif, login, senha, endereco, ordenado, conta, saldo):
         super().__init__(nome, idade, nif, login, senha, endereco, ordenado, conta)
-        self.saldo = float(saldo)
-        
+        self.saldo = saldo
 
-    def depositar(self, valor): #por corrigir
-        
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+            self.atualizar_saldo()
+            print(f"Depósito realizado com sucesso: +€{valor} \nSaldo Atual: € {self.saldo}")
+        else:
+            print("Valor de depósito inválido.")
 
-        self.saldo += valor
-        print(f'Depósito: +€{valor}') 
-             
-
-
-    def sacar(self, valor): #por corrigir
+    def sacar(self, valor): 
         if valor <= self.saldo:
             self.saldo -= valor
-            print(f'Levantamento: -€{valor}')            
-            
+            self.atualizar_saldo()
+            print(f"Levantamento realizado com sucesso: +€{valor} \nSaldo Atual: € {self.saldo}")
         else:
-            print("Saldo insuficiente.")
+            print("Valor de levantamento inválido ou saldo insuficiente.")
 
     def consultar_saldo(self):
         return self.saldo
@@ -109,5 +108,11 @@ class ContaBancaria(Pessoa):
             print(f"Conta {num_conta} atualizada com sucesso!")
         else:
             print(f"Conta {num_conta} não encontrada.")
+
+    def atualizar_saldo(self):
+        dados = pd.read_csv('Dados.csv')
+        index = dados[dados['login'] == self.login].index[0]
+        dados.at[index, 'saldo'] = self.saldo
+        dados.to_csv('Dados.csv', index=False)
 
 

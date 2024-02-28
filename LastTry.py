@@ -1,5 +1,5 @@
 import pandas as pd
-from Modelagem import Pessoa, ContaBancaria, ler_dados, escrever_dados, adicionar_nova_conta
+from Modelagem1 import Pessoa, ContaBancaria, ler_dados, escrever_dados, adicionar_nova_conta
 
 
 def main():
@@ -46,21 +46,19 @@ def main():
 
                 if escolha == "1":
                     print("\nSaldo atual: €", cliente.consultar_saldo())
+
                 elif escolha == "2":
-                    
                     valor_deposito = float(input("Digite o valor a depositar: €"))
                     cliente.depositar(valor_deposito)
-                    print("Depósito realizado com sucesso!")
-                    
+
                 elif escolha == "3":
                     valor_saque = float(input("Digite o valor a levantar: €"))
                     cliente.sacar(valor_saque)
-                    print("Levantamento realizado com sucesso!")
                     
                 elif escolha == "4":
                     cliente.atualizar_dados()
+
                 elif escolha == "9":
-                    
                     print("Obrigado pela sua preferência.")
                     break
                 else:
@@ -68,6 +66,7 @@ def main():
             
         else:
             print("Autenticação falhou. Verifique seu nome e senha.")
+            main()
 
     elif (escolha1 == 9):
         print("Obrigado pela sua preferência.")
