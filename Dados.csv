@@ -2,6 +2,10 @@ nome,idade,nif,login,senha,endereco,ordenado,conta,saldo,limite
 Ana Silva,28,262256987,A0001,asilva,Coimbra,2000,1,500,500
 Gabriela Cantarini,25,265988478,G0002,gcantarini,Lisboa,2000,2,800,500
 Guilherme Faccini,43,100265899,G0003,gfaccini,Faro,3000,3,600,500
-Maria Oliveira,35,123456789,M0004,moliveira,Porto,2500,4,700,500
+Maria Oliveira da Silveira,35,123456789,M0004,moliveira,Porto,2500,4,700,500
 João Pereira,30,987654321,J0005,jpereira,Lisboa,1800,5,400,500
 Afonso Silva,27,295685456,A0006,afsilva,Porto,5000,6,0.0,500
+Cecília Cantarini,7,256985856,ccanta,C0001,Mesmo da Gabi,800.0,7,0,500
+Maria Alice,3,145856953,malice,M0001,Mesmo da Ana,400.0,8,0,500
+Cookie Dog Gui,10,147582956,cdog,C0002,Mesmo do Gui,300.0,9,0,500
+Leandro Cantarini,5,147852693,lcantar,L0001,mesmo,900.0,10,0,500
