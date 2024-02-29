@@ -73,6 +73,6 @@ Technologies:<br/>
 
 # Author <a name="id08"></a>
 
-<a href="h">Ana Carolina</a><br />
+<a href="https://github.com/AvlisCarolina">Ana Carolina</a><br />
 <a href="https://www.linkedin.com/in/gabrielacantarini/">Gabriela Cantarini</a><br />
-<a href="h">Guilherme Faccini</a>
+<a href="https://github.com/Faccini-Guilherme">Guilherme Faccini</a>
