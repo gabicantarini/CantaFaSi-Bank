@@ -1,24 +1,20 @@
-import pandas as pd
-from Modelagem1 import Pessoa, ContaBancaria, ler_dados, escrever_dados, adicionar_nova_conta
+from Modelagem import ContaBancaria, ler_dados, adicionar_nova_conta
 
 
 def main():
-    print("Banco CantaFaSi")
+    print("\n-- Banco CantaFaSi --")
     print("1. Criar nova conta.")
     print("2. Entrar.")
     print("9. Sair.")
     escolha1 = int(input("Escolha uma opção: "))
-
     
-
     if (escolha1 == 1):
         try:
             adicionar_nova_conta()
             main()
         except ValueError as e: 
             print(e)
-            main()
-            
+            main()            
     
     elif (escolha1 == 2):
         login_digitado = input("Digite seu login: ")
