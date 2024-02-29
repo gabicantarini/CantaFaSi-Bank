@@ -31,7 +31,7 @@ Technologies:<br/>
 <code><img height="20" src="" alt="img">Git n Github</code>
 <code><img height="20" src="" alt="img">Visual Studio Code</code>
 <code><img height="20" src="" alt="img">Pandas</code>
-<code><img height="20" src="" alt="img">Draw.io</code>
+
 
 ## Signin <a name="id03"></a>
 
